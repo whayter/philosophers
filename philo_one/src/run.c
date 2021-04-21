@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/21 12:15:55 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/21 19:16:08 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,17 @@ void evaluate_simulation()
             }
         }
     }
+}
+
+void end_simulation()
+{
+    int i;
+
+    i = -1;
+    while (++i < g_env.n_phi)
+        pthread_join(g_env.phi[i].thread, NULL);
+    i = -1;
+    printf("\n\n");
+    while (++i < g_env.n_phi)
+        printf("%d has eaten %d times\n", g_env.phi[i].id, g_env.phi[i].rounds);
 }

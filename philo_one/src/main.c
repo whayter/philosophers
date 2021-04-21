@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:59 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/21 11:50:51 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/21 19:15:33 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,13 @@ static int  valid_parameters(int ac, char **av)
 
 int         main(int ac, char **av)
 {
-    int i;
-
     if (!valid_parameters(ac, av))
         return (-1);
     if (!set_environment(av))
         return (-1);
     start_simulation();
     evaluate_simulation();
-
-    
-    i = -1;
-    while (++i < g_env.n_phi)
-        pthread_join(g_env.phi[i].thread, NULL);
-
-    printf("\n\n");
-    i = -1;
-    while (++i < g_env.n_phi)
-        printf("%d has eaten %d times\n", g_env.phi[i].id, g_env.phi[i].rounds);
-
+    end_simulation();
     unset_environment();
     return (0);
 }
