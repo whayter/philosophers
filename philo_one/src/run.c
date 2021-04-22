@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/22 14:46:36 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/22 18:00:27 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void start_simulation()
     i = 0;
     while (i < g_env.n_phi)
     {
-        //get_actual_time(&g_env.phi[i].t_start);
         pthread_create(&g_env.phi[i].thread, NULL, routine, &g_env.phi[i]);
         i += 2;
     }
@@ -29,7 +28,6 @@ void start_simulation()
     i = 1;
     while (i < g_env.n_phi)
     {
-        //get_actual_time(&g_env.phi[i].t_start);
         pthread_create(&g_env.phi[i].thread, NULL, routine, &g_env.phi[i]);
         i += 2;
     }
