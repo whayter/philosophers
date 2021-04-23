@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/22 17:58:05 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/23 09:34:42 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void        philosopher_die()
     int strt;
 
     i = -1;
+    strt = get_time_since(g_env.t_start);
     while (++i < g_env.n_phi)
     {
-        strt = get_time_since(g_env.t_start);
         if (get_time_since(g_env.phi[i].t_last) > g_env.t_die)
         {
             display_status(g_env.phi[i].id, strt, DIE);
@@ -40,8 +40,8 @@ static void philosopher_eat(t_philo *phi)
     if (g_env.run)
     {
         display_status(phi->id, get_time_since(g_env.t_start), EAT);
-        usleep(g_env.t_eat * 1000);
         get_actual_time(&phi->t_last);
+        usleep(g_env.t_eat * 1000);
         phi->rounds++;
     }
     pthread_mutex_unlock(&g_env.forks[phi->left_fork]);
@@ -63,9 +63,9 @@ void        *routine(void *phi)
 {
     while (g_env.run)
     {
+        philosopher_think(phi);
         philosopher_eat(phi);
         philosopher_sleep(phi);
-        philosopher_think(phi);
     }
     return (NULL);
 }

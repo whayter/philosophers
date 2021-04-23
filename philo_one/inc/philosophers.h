@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/22 15:23:50 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:19:00 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct      s_philo
     int             left_fork;
     int             right_fork;
     struct timeval	t_last;
-    pthread_mutex_t lock;
 }                   t_philo;
 
 typedef struct      s_env

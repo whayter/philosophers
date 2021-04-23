@@ -13,7 +13,7 @@ OBJ = $(addprefix  $(OBJ_DIR)/,$(SRC:%.c=%.o))
 vpath %.c $(SRC_DIR)
 
 IFLAGS = $(foreach inc, $(INC_DIR),-I$(inc))
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 CC = clang
 RM = rm -rf

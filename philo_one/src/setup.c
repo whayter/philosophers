@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 14:53:50 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/22 17:44:35 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/22 22:18:55 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static int  set_philosophers()
         g_env.phi[i].right_fork = (i + 1) % g_env.n_phi;
         g_env.phi[i].t_last.tv_sec = 0;
         g_env.phi[i].t_last.tv_usec = 0;
-        pthread_mutex_init(&g_env.phi[i].lock, NULL);
     }
     return (1);
 }
@@ -75,10 +74,7 @@ void        unset_environment()
 {
     int i = -1;
     while (++i < g_env.n_phi)
-    {
-        pthread_mutex_destroy(&g_env.phi[i].lock);
         pthread_mutex_destroy(&g_env.forks[i]);
-    }
     pthread_mutex_destroy(&g_env.lock);
     free(g_env.forks);
     free(g_env.phi);
