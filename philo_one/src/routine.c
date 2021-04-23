@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/23 17:05:12 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:08:38 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static void philosopher_eat(t_philo *phi)
     {
         display_status(phi->id, get_time_since(g_env.t_start), EAT);
         get_actual_time(&phi->t_last);
-        usleep(g_env.t_eat * 1000);
+        wait_for(g_env.t_eat);
+        //usleep(g_env.t_eat * 1000);
         phi->rounds++;
     }
     pthread_mutex_unlock(&g_env.forks[phi->left_fork]);
@@ -51,7 +52,8 @@ static void philosopher_eat(t_philo *phi)
 static void philosopher_sleep(t_philo *phi)
 {
     display_status(phi->id, get_time_since(g_env.t_start), SLP);
-    usleep(g_env.t_slp * 1000);
+    wait_for(g_env.t_slp);
+    //usleep(g_env.t_slp * 1000);
 }
 
 static void philosopher_think(t_philo *phi)

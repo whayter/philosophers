@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 19:03:17 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/23 09:44:01 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/23 22:09:31 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,18 @@ int     get_time_since(struct timeval reference)
     res.tv_sec = now.tv_sec - reference.tv_sec;
     res.tv_usec = now.tv_usec - reference.tv_usec;
     return (get_ms_from_tv(res));
+}
+
+void    wait_for(int ms)
+{
+    struct  timeval now;
+    int     ref;
+    
+    gettimeofday(&now, NULL);
+    ref = get_ms_from_tv(now) + ms;
+    while (get_ms_from_tv(now) <= ref)
+    {
+        usleep(10);
+        gettimeofday(&now, NULL);
+    }
 }

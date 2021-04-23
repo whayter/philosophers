@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/22 22:19:00 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/23 19:44:34 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ typedef struct      s_env
     pthread_mutex_t *forks;
     int             run;
     pthread_mutex_t lock;
+    pthread_mutex_t syslock;
     struct timeval	t_start;
 }                   t_env;
 
@@ -98,6 +99,7 @@ int			ft_isspace(char c);
 
 void        get_actual_time(struct timeval *tv);
 int         get_time_since(struct timeval reference);
+void        wait_for(int ms);
 
 /*
 ** **************************** display_utility.c ******************************
