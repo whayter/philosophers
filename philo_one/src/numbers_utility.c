@@ -6,20 +6,20 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 13:02:03 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:11:28 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:35:30 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-static int  ft_isdigit(int c)
+static int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
 
-int         ft_isnumber(char *str)
+int			ft_isnumber(char *str)
 {
 	int	i;
 
