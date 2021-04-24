@@ -6,13 +6,13 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 16:23:28 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:16:30 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	start_simulation()
+void	start_simulation(void)
 {
 	int i;
 
@@ -35,7 +35,7 @@ void	start_simulation()
 	}
 }
 
-void	evaluate_simulation()
+void	evaluate_simulation(void)
 {
 	int i;
 	int full;
@@ -58,7 +58,7 @@ void	evaluate_simulation()
 	}
 }
 
-void	end_simulation()
+void	end_simulation(void)
 {
 	int i;
 

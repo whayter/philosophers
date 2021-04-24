@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 14:53:50 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:05:44 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:15:02 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void register_parameters(char **params)
         g_env.rounds = -1;
 }
 
-static int  set_forks()
+static int  set_forks(void)
 {
     int i;
 
@@ -37,7 +37,7 @@ static int  set_forks()
     return (1);
 }
 
-static int  set_philosophers()
+static int  set_philosophers(void)
 {
     int i;
 
@@ -54,7 +54,7 @@ static int  set_philosophers()
     return (1);
 }
 
-int        set_environment(char **params)
+int         set_environment(char **params)
 {
     register_parameters(params);
     if (!set_forks())
@@ -69,7 +69,7 @@ int        set_environment(char **params)
     return (1);
 }
 
-void        unset_environment()
+void        unset_environment(void)
 {
     int i;
 

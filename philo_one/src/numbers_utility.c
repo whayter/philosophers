@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 13:02:03 by hwinston          #+#    #+#             */
-/*   Updated: 2021/03/15 11:53:21 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:11:28 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ static int  ft_isdigit(int c)
 
 int         ft_isnumber(char *str)
 {
-    int i;
+	int	i;
 
-    i = -1;
-    while (str[++i])
-        if (!ft_isdigit(str[i]))
-            return (0);
-    return (1);
+	i = -1;
+	while (str[++i])
+		if (!ft_isdigit(str[i]))
+			return (0);
+	return (1);
 }
 
 int			ft_atoi(const char *str)

@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 19:44:05 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 08:11:11 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:14:16 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void display_status(int id, int ms, int status)
         "is eating",
         "is sleeping",
         "is thinking"};
+
     if (g_env.run)
     {
         pthread_mutex_lock(&g_env.syslock);
