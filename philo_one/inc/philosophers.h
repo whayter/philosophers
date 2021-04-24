@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:44:15 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:45:19 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,27 @@
 
 typedef struct		s_philo
 {
-    int				id;
-    int				rounds;
-    pthread_t		thread;
-    int				left_fork;
-    int				right_fork;
-    struct timeval	t_last;
+	int				id;
+	int				rounds;
+	pthread_t		thread;
+	int				left_fork;
+	int				right_fork;
+	struct timeval	t_last;
 }					t_philo;
 
 typedef struct		s_env
 {
-    int				n_phi;
-    int				t_die;
-    int				t_eat;
-    int				t_slp;
-    int				rounds;
-    t_philo			*phi;
-    int				run;
-    pthread_mutex_t	*forks;
-    pthread_mutex_t	lock;
-    pthread_mutex_t	syslock;
-    struct timeval	t_start;
+	int				n_phi;
+	int				t_die;
+	int				t_eat;
+	int				t_slp;
+	int				rounds;
+	t_philo			*phi;
+	int				run;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	lock;
+	pthread_mutex_t	syslock;
+	struct timeval	t_start;
 }					t_env;
 
 extern t_env		g_env;
