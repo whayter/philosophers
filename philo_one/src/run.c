@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 11:16:13 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 11:35:59 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void evaluate_simulation()
             full = 0;
             while (++i < g_env.n_phi)
             {
-                if (g_env.phi[i].rounds == g_env.rounds)
+                if (g_env.phi[i].rounds >= g_env.rounds)
                     full++;
             }
             if (full == g_env.n_phi)
