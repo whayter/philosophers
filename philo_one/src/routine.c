@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 08:21:21 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 10:56:28 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void        philosopher_die()
     int strt;
 
     i = -1;
+    strt = get_time_since(g_env.t_start);
     while (++i < g_env.n_phi)
     {
-        strt = get_time_since(g_env.t_start);
         if (get_time_since(g_env.phi[i].t_last) > g_env.t_die)
         {
             display_status(g_env.phi[i].id, strt, DIE);
