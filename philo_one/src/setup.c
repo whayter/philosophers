@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 14:53:50 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 08:25:45 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 08:50:41 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static int  set_philosophers()
         g_env.phi[i].left_fork = i;
         g_env.phi[i].right_fork = (i + 1) % g_env.n_phi;
     }
-    printf("\n");
     return (1);
 }
 
