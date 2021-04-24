@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 14:53:50 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 11:13:41 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:05:44 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static void register_parameters(char **params)
     if (params[5])
         g_env.rounds = ft_atoi(params[5]);
     else
-        g_env.rounds = -1; 
+        g_env.rounds = -1;
 }
 
 static int  set_forks()
 {
     int i;
-    
+
     if (!(g_env.forks = malloc(sizeof(pthread_mutex_t) * g_env.n_phi)))
         return (0);
     i = -1;
@@ -71,7 +71,9 @@ int        set_environment(char **params)
 
 void        unset_environment()
 {
-    int i = -1;
+    int i;
+
+    i = -1;
     while (++i < g_env.n_phi)
         pthread_mutex_destroy(&g_env.forks[i]);
     pthread_mutex_destroy(&g_env.lock);
