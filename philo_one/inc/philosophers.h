@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 11:13:32 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:44:15 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,93 +20,88 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-# define RED "\e[0;31m"
-# define YEL "\e[0;33m"
-# define BLU "\e[0;34m"
-
 # define DIE 0
 # define FRK 1
 # define EAT 2
 # define SLP 3
 # define THK 4
 
-typedef struct      s_philo
+typedef struct		s_philo
 {
-    int             id;
-    int             rounds;
-    pthread_t       thread;
-    int             left_fork;
-    int             right_fork;
+    int				id;
+    int				rounds;
+    pthread_t		thread;
+    int				left_fork;
+    int				right_fork;
     struct timeval	t_last;
-}                   t_philo;
+}					t_philo;
 
-typedef struct      s_env
+typedef struct		s_env
 {
-    int             n_phi;
-    int             t_die;
-    int             t_eat;
-    int             t_slp;
-    int             rounds;
-    t_philo         *phi;
-    int             run;
-    pthread_mutex_t *forks;
-    pthread_mutex_t lock;
-    pthread_mutex_t syslock;
+    int				n_phi;
+    int				t_die;
+    int				t_eat;
+    int				t_slp;
+    int				rounds;
+    t_philo			*phi;
+    int				run;
+    pthread_mutex_t	*forks;
+    pthread_mutex_t	lock;
+    pthread_mutex_t	syslock;
     struct timeval	t_start;
-}                   t_env;
+}					t_env;
 
-extern t_env g_env;
+extern t_env		g_env;
 
 /*
 ** ********************************* setup.c ***********************************
 */
 
-int         set_environment(char **params);
-void        unset_environment();
+int					set_environment(char **params);
+void				unset_environment(void);
 
 /*
 ** ******************************** routine.c **********************************
 */
 
-void        *routine(void *phi);
-void        philosopher_die();
+void				*routine(void *phi);
+void				philosopher_die(void);
 
 /*
 ** ********************************** run.c ************************************
 */
 
-void        start_simulation();
-void        evaluate_simulation();
-void        end_simulation();
+void				start_simulation(void);
+void				evaluate_simulation(void);
+void				end_simulation(void);
 
 /*
 ** **************************** numbers_utility.c ******************************
 */
 
-int         ft_isnumber(char *str);
-int		    ft_atoi(const char *str);
+int					ft_isnumber(char *str);
+int					ft_atoi(const char *str);
 
 /*
 ** **************************** strings_utility.c ******************************
 */
 
-size_t      ft_strlen(const char *s);
-int			ft_isspace(char c);
+size_t				ft_strlen(const char *s);
+int					ft_isspace(char c);
 
 /*
 ** ****************************** time_utility.c *******************************
 */
 
-void        get_actual_time(struct timeval *tv);
-int         get_time_since(struct timeval reference);
-void        wait_for(int ms);
+void				get_actual_time(struct timeval *tv);
+int					get_time_since(struct timeval reference);
+void				wait_for(int ms);
 
 /*
 ** **************************** display_utility.c ******************************
 */
 
-//void        display_parameters(char **params);
-void        display_status(int id, int ms, int status);
-int         display_error(char *msg);
+void				display_status(int id, int ms, int status);
+int					display_error(char *msg);
 
 #endif
