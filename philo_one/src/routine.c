@@ -6,13 +6,13 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:17:44 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:37:01 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void		philosopher_die()
+void		philosopher_die(void)
 {
 	int i;
 	int strt;
