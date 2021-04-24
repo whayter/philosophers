@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 19:03:17 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:38:13 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 18:39:35 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	get_actual_time(struct timeval *tv)
 
 int		get_time_since(struct timeval reference)
 {
-	struct timeval  now;
-	struct timeval  res;
+	struct timeval now;
+	struct timeval res;
 
 	get_actual_time(&now);
 	res.tv_sec = now.tv_sec - reference.tv_sec;
@@ -35,8 +35,8 @@ int		get_time_since(struct timeval reference)
 
 void	wait_for(int ms)
 {
-	struct  timeval now;
-	int     ref;
+	struct timeval	now;
+	int				ref;
 
 	gettimeofday(&now, NULL);
 	ref = get_ms_from_tv(now) + ms;
