@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 10:56:28 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 11:43:02 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ static void philosopher_eat(t_philo *phi)
     pthread_mutex_lock(&g_env.lock);
     pthread_mutex_lock(&g_env.forks[phi->left_fork]);
     display_status(phi->id, get_time_since(g_env.t_start), FRK);
-
     pthread_mutex_lock(&g_env.forks[phi->right_fork]);
-    display_status(phi->id, get_time_since(g_env.t_start), FRK);
-    
+    display_status(phi->id, get_time_since(g_env.t_start), FRK);  
     pthread_mutex_unlock(&g_env.lock);
     if (g_env.run)
     {
