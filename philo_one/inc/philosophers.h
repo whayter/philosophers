@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/23 19:44:34 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 08:16:31 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ typedef struct      s_env
     int             t_slp;
     int             rounds;
     t_philo         *phi;
-    pthread_mutex_t *forks;
     int             run;
+    pthread_mutex_t *forks;
     pthread_mutex_t lock;
     pthread_mutex_t syslock;
     struct timeval	t_start;
@@ -105,6 +105,7 @@ void        wait_for(int ms);
 ** **************************** display_utility.c ******************************
 */
 
+//void        display_parameters(char **params);
 void        display_status(int id, int ms, int status);
 int         display_error(char *msg);
 

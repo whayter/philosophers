@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/23 22:09:11 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/24 08:14:26 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void start_simulation()
         pthread_create(&g_env.phi[i].thread, NULL, routine, &g_env.phi[i]);
         i += 2;
     }
-    //wait_for(100);
-    usleep(1);
+    usleep(1000);
     i = 1;
     while (i < g_env.n_phi)
     {
