@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/25 16:40:29 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/04/25 16:52:07 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/wait.h>
 # include <sys/time.h>
 # include <pthread.h>
+# include <fcntl.h>
 # include <semaphore.h>
 
 # define DIE 0
