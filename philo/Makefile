@@ -1,4 +1,4 @@
-NAME = philo_one
+NAME = philo
 
 SRC_DIR = ./src
 INC_DIR = ./inc
