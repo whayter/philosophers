@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 19:44:05 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:33:53 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:33:22 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	display_status(int id, int ms, int status)
 {
-	char const *list[5] = {
+	char const	*list[5] = {
 		"died",
 		"has taken a fork",
 		"is eating",
@@ -29,7 +29,7 @@ void	display_status(int id, int ms, int status)
 	}
 }
 
-int		display_error(char *msg)
+int	display_error(char *msg)
 {
 	printf("Error: %s\n", msg);
 	return (0);

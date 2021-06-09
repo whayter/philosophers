@@ -6,16 +6,16 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 15:30:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:37:01 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:35:25 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void		philosopher_die(void)
+void	philosopher_die(void)
 {
-	int i;
-	int strt;
+	int	i;
+	int	strt;
 
 	i = -1;
 	strt = get_time_since(g_env.t_start);
@@ -59,7 +59,7 @@ static void	philosopher_think(t_philo *phi)
 	display_status(phi->id, get_time_since(g_env.t_start), THK);
 }
 
-void		*routine(void *phi)
+void	*routine(void *phi)
 {
 	while (g_env.run)
 	{

@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:56 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:45:19 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:42:49 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define SLP 3
 # define THK 4
 
-typedef struct		s_philo
+typedef struct s_philo
 {
 	int				id;
 	int				rounds;
@@ -36,7 +36,7 @@ typedef struct		s_philo
 	struct timeval	t_last;
 }					t_philo;
 
-typedef struct		s_env
+typedef struct s_env
 {
 	int				n_phi;
 	int				t_die;

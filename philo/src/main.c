@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 12:05:59 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:36:29 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:34:06 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_env		g_env;
 
 static int	valid_parameters(int ac, char **av)
 {
-	int i;
+	int	i;
 
 	if (ac < 5)
 		return (display_error("not enough parameters."));
@@ -31,7 +31,7 @@ static int	valid_parameters(int ac, char **av)
 	return (1);
 }
 
-int			main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	if (!valid_parameters(ac, av))
 		return (-1);

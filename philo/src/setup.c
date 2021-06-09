@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 14:53:50 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:31:26 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:41:44 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ static void	register_parameters(char **params)
 
 static int	set_forks(void)
 {
-	int i;
+	int	i;
 
-	if (!(g_env.forks = malloc(sizeof(pthread_mutex_t) * g_env.n_phi)))
+	g_env.forks = malloc(sizeof(pthread_mutex_t) * g_env.n_phi);
+	if (!g_env.forks)
 		return (0);
 	i = -1;
 	while (++i < g_env.n_phi)
@@ -39,9 +40,10 @@ static int	set_forks(void)
 
 static int	set_philosophers(void)
 {
-	int i;
+	int	i;
 
-	if (!(g_env.phi = malloc(sizeof(t_philo) * g_env.n_phi)))
+	g_env.phi = malloc(sizeof(t_philo) * g_env.n_phi);
+	if (!g_env.phi)
 		return (0);
 	i = -1;
 	while (++i < g_env.n_phi)
@@ -54,7 +56,7 @@ static int	set_philosophers(void)
 	return (1);
 }
 
-int			set_environment(char **params)
+int	set_environment(char **params)
 {
 	register_parameters(params);
 	if (!set_forks())
@@ -69,9 +71,9 @@ int			set_environment(char **params)
 	return (1);
 }
 
-void		unset_environment(void)
+void	unset_environment(void)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < g_env.n_phi)

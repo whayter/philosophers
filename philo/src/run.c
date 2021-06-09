@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 10:52:14 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:16:30 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:36:05 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	start_simulation(void)
 {
-	int i;
+	int	i;
 
 	g_env.run = 1;
 	i = 0;
@@ -37,8 +37,8 @@ void	start_simulation(void)
 
 void	evaluate_simulation(void)
 {
-	int i;
-	int full;
+	int	i;
+	int	full;
 
 	while (g_env.run)
 	{
@@ -60,7 +60,7 @@ void	evaluate_simulation(void)
 
 void	end_simulation(void)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < g_env.n_phi)

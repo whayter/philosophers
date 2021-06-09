@@ -6,7 +6,7 @@
 /*   By: hwinston <hwinston@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 13:02:03 by hwinston          #+#    #+#             */
-/*   Updated: 2021/04/24 18:35:30 by hwinston         ###   ########.fr       */
+/*   Updated: 2021/06/09 09:34:32 by hwinston         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_isdigit(int c)
 	return (0);
 }
 
-int			ft_isnumber(char *str)
+int	ft_isnumber(char *str)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int			ft_isnumber(char *str)
 	return (1);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int				res;
 	int				sign;
